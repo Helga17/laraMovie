@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Actor extends Model
+class Person extends Model
 {
     use HasFactory;
+
+    protected $table = 'people';
 
     protected $fillable = [
         'first_name',
@@ -15,4 +17,10 @@ class Actor extends Model
         'birthday',
         'image'
     ];
+
+    public function movies()
+    {
+        return $this->belongsToMany(Movie::class, 'movie_person');
+    }
 }
+

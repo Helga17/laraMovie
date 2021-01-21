@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Actor;
+use App\Models\Person;
 use App\Models\Movie;
 
 /*
@@ -16,16 +16,21 @@ use App\Models\Movie;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+//Route::post('/register', 'API\AuthController@register');
+Route::post('/register', [\App\Http\Controllers\API\AuthController::class, 'register']);
+//Route::post('/login', 'API\AuthController@login');
+Route::post('/login', [\App\Http\Controllers\API\AuthController::class, 'login']);
 
 Route::get('/actors', function (Request $request) {
-    return Actor::all();
+    return Person::all();
 });
 
 Route::get('/actors/{id}', function ($id) {
-    return Actor::find($id);
+    return Person::find($id);
 });
 
 Route::get('/movies', function (Request $request) {
@@ -33,7 +38,32 @@ Route::get('/movies', function (Request $request) {
 });
 
 Route::get('/movies/{id}', function ($id) {
-    return Movie::with(['genres', 'actors'])->find($id);
+    $movie = Movie::with('genres')->find($id);
+
+    $movie_people = \Illuminate\Support\Facades\DB::table('people')
+        ->select([
+            'people.first_name',
+            'people.last_name',
+            'people.birthday',
+            'people.image',
+            'roles.title as role_title',
+            'roles.category'
+        ])
+        ->join('movie_person', function($q) use ($id) {
+            $q->on('people.id', '=', 'movie_person.person_id')
+                ->where('movie_person.movie_id', '=', $id);
+        })
+        ->join('roles', 'roles.id', '=', 'movie_person.role_id')
+        ->get();
+
+    $actors = $movie_people->where('category', '=', 'actor') ?? [];
+
+    $directors = $movie_people->where('category', '=', 'directors') ?? [];
+
+    $movie->actors = $actors;
+    $movie->directors = $directors;
+
+    return $movie;
 });
 
 Route::get('/test', function () {
