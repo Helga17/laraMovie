@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\API\AuthController;
+use App\Models\Genre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Models\Person;
 use App\Models\Movie;
@@ -20,10 +23,8 @@ use App\Models\Movie;
 //    return $request->user();
 //});
 
-//Route::post('/register', 'API\AuthController@register');
-Route::post('/register', [\App\Http\Controllers\API\AuthController::class, 'register']);
-//Route::post('/login', 'API\AuthController@login');
-Route::post('/login', [\App\Http\Controllers\API\AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/actors', function (Request $request) {
     return Person::all();
@@ -37,10 +38,18 @@ Route::get('/movies', function (Request $request) {
     return Movie::all();
 });
 
+Route::get('/genres', function (Request $request) {
+   return Genre::all();
+});
+
+Route::get('/genres/{id}', function ($id) {
+   return Genre::with(['movies'])->find($id);
+});
+
 Route::get('/movies/{id}', function ($id) {
     $movie = Movie::with('genres')->find($id);
 
-    $movie_people = \Illuminate\Support\Facades\DB::table('people')
+    $movie_people = DB::table('people')
         ->select([
             'people.first_name',
             'people.last_name',
