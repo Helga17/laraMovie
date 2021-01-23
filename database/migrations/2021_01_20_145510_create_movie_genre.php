@@ -55,6 +55,9 @@ class CreateMovieGenre extends Migration
             ],
             14 => [
                 'genreIds' => [1, 2, 3],
+            ],
+            15 => [
+                'genreIds' => [1, 3],
             ]
         ];
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Models\Genre;
+use App\Models\Moment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -31,10 +32,16 @@ Route::get('/actors', function (Request $request) {
 });
 
 Route::get('/actors/{id}', function ($id) {
-    return Person::find($id);
+    return Person::with('movies')->find($id);
 });
 
 Route::get('/movies', function (Request $request) {
+    $input = $request->only(['filter', 'limit']);
+
+    if (isset($input['limit'])) {
+        return Movie::take($input['limit'])->get();
+    }
+
     return Movie::all();
 });
 
@@ -47,10 +54,11 @@ Route::get('/genres/{id}', function ($id) {
 });
 
 Route::get('/movies/{id}', function ($id) {
-    $movie = Movie::with('genres')->find($id);
+    $movie = Movie::with('genres', 'moments')->find($id);
 
     $movie_people = DB::table('people')
         ->select([
+            'people.id',
             'people.first_name',
             'people.last_name',
             'people.birthday',
@@ -67,7 +75,7 @@ Route::get('/movies/{id}', function ($id) {
 
     $actors = $movie_people->where('category', '=', 'actor') ?? [];
 
-    $directors = $movie_people->where('category', '=', 'directors') ?? [];
+    $directors = $movie_people->where('category', '=', 'director') ?? [];
 
     $movie->actors = $actors;
     $movie->directors = $directors;

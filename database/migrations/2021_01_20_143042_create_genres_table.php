@@ -14,7 +14,7 @@ class CreateGenresTable extends Migration
     public function up()
     {
         $genres = [
-            [
+            1 => [
                 'title' => 'drama',
                 'displayedTitle' => 'Драма'
             ],
@@ -46,7 +46,7 @@ class CreateGenresTable extends Migration
                 'title' => 'war',
                 'displayedTitle' => 'Війна'
             ],
-            [
+            9 => [
                 'title' => 'comedy',
                 'displayedTitle' => 'Комедія'
             ]
@@ -55,6 +55,7 @@ class CreateGenresTable extends Migration
         Schema::create('genres', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('displayedTitle');
             $table->timestamps();
         });
 

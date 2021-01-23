@@ -33,6 +33,12 @@ class CreateMoviePerson extends Migration
                         'title' => 'Bryan',
                         'category' => 'actor'
                     ]
+                ],
+                'directorIds' => [
+                   55 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ]
                 ]
             ],
             2 => [
@@ -52,6 +58,12 @@ class CreateMoviePerson extends Migration
                     8 => [
                         'title' => 'paul',
                         'category' => 'actor'
+                    ]
+                ],
+                'directorIds' => [
+                    56 => [
+                        'title' => '',
+                        'category' => 'director'
                     ]
                 ]
             ],
@@ -73,6 +85,12 @@ class CreateMoviePerson extends Migration
                         'title' => 'Linda',
                         'category' => 'actor'
                     ]
+                ],
+                'directorIds' => [
+                    57 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ]
                 ]
             ],
             4 => [
@@ -93,6 +111,24 @@ class CreateMoviePerson extends Migration
                         'title' => 'dorn',
                         'category' => 'actor'
                     ]
+                ],
+                'directorIds' => [
+                    14 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ],
+                    58 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ],
+                    59 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ],
+                    60 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ],
                 ]
             ],
             5 => [
@@ -108,6 +144,12 @@ class CreateMoviePerson extends Migration
                     19 => [
                         'title' => 'dolores',
                         'category' => 'actor'
+                    ]
+                ],
+                'directorIds' => [
+                    61 => [
+                        'title' => '',
+                        'category' => 'director'
                     ]
                 ]
             ],
@@ -129,6 +171,12 @@ class CreateMoviePerson extends Migration
                         'title' => 'old allie',
                         'category' => 'actor'
                     ]
+                ],
+                'directorIds' => [
+                    62 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ]
                 ]
             ],
             7 => [
@@ -145,6 +193,12 @@ class CreateMoviePerson extends Migration
                     ], 27 => [
                         'title' => 'Katrina',
                         'category' => 'actor'
+                    ]
+                ],
+                'directorIds' => [
+                    63 => [
+                        'title' => '',
+                        'category' => 'director'
                     ]
                 ]
             ],
@@ -163,6 +217,12 @@ class CreateMoviePerson extends Migration
                         'title' => 'Larry',
                         'category' => 'actor'
                     ]
+                ],
+                'directorIds' => [
+                    64 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ]
                 ]
             ],
             9 => [
@@ -179,6 +239,12 @@ class CreateMoviePerson extends Migration
                     ], 35 => [
                         'title' => 'Martin',
                         'category' => 'actor'
+                    ]
+                ],
+                'directorIds' => [
+                    65 => [
+                        'title' => '',
+                        'category' => 'director'
                     ]
                 ]
             ],
@@ -199,6 +265,12 @@ class CreateMoviePerson extends Migration
                         'title' => 'Abbie',
                         'category' => 'actor'
                     ]
+                ],
+                'directorIds' => [
+                    66 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ]
                 ]
             ],
             11 => [
@@ -215,6 +287,12 @@ class CreateMoviePerson extends Migration
                     ], 43 => [
                         'title' => 'ms',
                         'category' => 'actor'
+                    ]
+                ],
+                'directorIds' => [
+                    67 => [
+                        'title' => '',
+                        'category' => 'director'
                     ]
                 ]
             ],
@@ -233,6 +311,12 @@ class CreateMoviePerson extends Migration
                         'title' => 'Nail',
                         'category' => 'actor'
                     ]
+                ],
+                'directorIds' => [
+                    68 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ]
                 ]
             ],
             13 => [
@@ -250,6 +334,12 @@ class CreateMoviePerson extends Migration
                         'title' => 'Eyb',
                         'category' => 'actor'
                     ]
+                ],
+                'directorIds' => [
+                    69 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ]
                 ]
             ],
             14 => [
@@ -263,6 +353,26 @@ class CreateMoviePerson extends Migration
                     ], 54 => [
                         'title' => 'Nelson',
                         'category' => 'actor'
+                    ]
+                ],
+                'directorIds' => [
+                    70 => [
+                        'title' => '',
+                        'category' => 'director'
+                    ]
+                ]
+            ],
+            15 => [
+                'actorIds' => [
+                    1 => [
+                        'title' => 'Elizabeth',
+                        'category' => 'actor'
+                    ]
+                ],
+                'directorIds' => [
+                    70 => [
+                        'title' => '',
+                        'category' => 'director'
                     ]
                 ]
             ]
@@ -281,6 +391,14 @@ class CreateMoviePerson extends Migration
         foreach ($movies_actors as $movieId => $movie_actors) {
             $movie = App\Models\Movie::find($movieId);
             foreach ($movie_actors['actorIds'] as $movie_actor_id => $role) {
+                $roleModel = App\Models\Role::create($role);
+                $movie->people()->attach($movie_actor_id, ['role_id' => $roleModel->id]);
+            }
+
+            if (!array_key_exists('directorIds', $movie_actors)) {
+                continue;
+            }
+            foreach ($movie_actors['directorIds'] as $movie_actor_id => $role) {
                 $roleModel = App\Models\Role::create($role);
                 $movie->people()->attach($movie_actor_id, ['role_id' => $roleModel->id]);
             }

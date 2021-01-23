@@ -13,7 +13,6 @@ class CreateMoviesTable extends Migration
      */
     public function up()
     {
-
         $movies = [
             [
                 'title' => 'Спокута',
@@ -265,6 +264,24 @@ class CreateMoviesTable extends Migration
                     // [ id: 4, image: 'https://tricolortvmag.ru/upload/31f79a/170-sr008m.png' ]
                 ],
                 'actorIds' => [52, 53, 54]
+            ],
+            [
+                'title' => 'Гордість і упередження',
+                'image' => 'https://upload.wikimedia.org/wikipedia/uk/9/90/Pride-and-prejudice2005.jpg',
+                'rating' => '8',
+                'originalTitle' => 'Pride and Prejudice',
+                'duration' => '2г 9хв |',
+                'year' => '2005',
+                'isPopular' => 'false',
+                'description' => "У центрі оповідання — небагата родина Беннетів, що складається з пана й пані Беннет та їхніх п'ятьох дочок — Джейн, Елізабет (Ліззі), Мері, Кетрин (Китті) і Лідії. Вони живуть на фермі у селі Лонгборн. Однак спадкоємцем цієї ферми є двоюрідний брат дівчат, племінник Беннета — пан Коллінз. Тому головною метою життя пані Беннет є скоріше й вдаліше видати заміж дочок — перш, ніж помре пан Беннет. Друга за віком дочка й головна героїня фільму, розумна та вільнодумна Елізабет, вірить, що шлюб повинен засновуватися тільки на справжньому коханні — і тому не квапиться вийти заміж.",
+
+                'moments' => [
+                    // [ id: 1, image: 'https://lh3.googleusercontent.com/-SFWiIWXlLcw/TYXFW2gacbI/AAAAAAAAAYQ/Zk5P639M1EE/s1600/story.jpg' ],
+                    // [ id: 2, image: 'https://i.pinimg.com/originals/4a/2d/64/4a2d6401772e99086463882fface65e3.jpg' ],
+                    // [ id: 3, image: 'https://screenqueens.files.wordpress.com/2018/09/17.jpg?w=640' ],
+                    // [ id: 4, image: 'https://tricolortvmag.ru/upload/31f79a/170-sr008m.png' ]
+                ],
+                'actorIds' => [1]
             ]
         ];
 

@@ -20,4 +20,9 @@ class Movie extends Model
     {
         return $this->belongsToMany(Person::class, 'movie_person');
     }
+
+    public function moments()
+    {
+        return $this->hasMany(Moment::class);
+    }
 }
