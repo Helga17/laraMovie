@@ -18,19 +18,19 @@ class CreateMoviePerson extends Migration
             1 => [
                 'actorIds' => [
                     1 => [
-                        'title' => 'Сессилия',
+                        'title' => 'Сесілія Талліс',
                         'category' => 'actor'
                     ],
                     2 => [
-                        'title' => 'Robie',
+                        'title' => 'Роббі Тернер',
                         'category' => 'actor'
                     ],
                     3 => [
-                        'title' => 'paul',
+                        'title' => 'Пол Маршал',
                         'category' => 'actor'
                     ],
                     4 => [
-                        'title' => 'Bryan',
+                        'title' => 'Брайоні Талліс',
                         'category' => 'actor'
                     ]
                 ],
@@ -44,19 +44,19 @@ class CreateMoviePerson extends Migration
             2 => [
                 'actorIds' => [
                     5 => [
-                        'title' => 'Nicole',
+                        'title' => 'Ніколь Барбер',
                         'category' => 'actor'
                     ],
                     6 => [
-                        'title' => 'Charlie',
+                        'title' => 'Чарлі Барбер',
                         'category' => 'actor'
                     ],
                     7 => [
-                        'title' => 'Nora',
+                        'title' => 'Нора Феншоу',
                         'category' => 'actor'
                     ],
                     8 => [
-                        'title' => 'paul',
+                        'title' => 'Берт Спіц',
                         'category' => 'actor'
                     ]
                 ],
@@ -70,19 +70,19 @@ class CreateMoviePerson extends Migration
             3 => [
                 'actorIds' => [
                     9 => [
-                        'title' => 'Benua',
+                        'title' => 'Бенуа Бланк',
                         'category' => 'actor'
                     ],
                     10 => [
-                        'title' => 'Marta',
+                        'title' => 'Марта',
                         'category' => 'actor'
                     ],
                     11 => [
-                        'title' => 'Hue',
+                        'title' => "Г'ю Драйсдейл",
                         'category' => 'actor'
                     ],
                     12 => [
-                        'title' => 'Linda',
+                        'title' => 'Лінда Драйсдейл',
                         'category' => 'actor'
                     ]
                 ],
@@ -96,27 +96,23 @@ class CreateMoviePerson extends Migration
             4 => [
                 'actorIds' => [
                     13 => [
-                        'title' => 'Mike',
+                        'title' => 'Майк Ловрі',
                         'category' => 'actor'
                     ],
                     14 => [
-                        'title' => 'Marcus',
+                        'title' => 'Маркус Бернетт',
                         'category' => 'actor'
                     ],
                     15 => [
-                        'title' => 'kelie',
+                        'title' => 'Келлі',
                         'category' => 'actor'
                     ],
                     16 => [
-                        'title' => 'dorn',
+                        'title' => 'Дорн',
                         'category' => 'actor'
                     ]
                 ],
                 'directorIds' => [
-                    14 => [
-                        'title' => '',
-                        'category' => 'director'
-                    ],
                     58 => [
                         'title' => '',
                         'category' => 'director'
@@ -134,15 +130,15 @@ class CreateMoviePerson extends Migration
             5 => [
                 'actorIds' => [
                     17 => [
-                        'title' => 'Tony',
+                        'title' => 'Тоні Валлелонга',
                         'category' => 'actor'
                     ],
                     18 => [
-                        'title' => 'Dohn',
+                        'title' => 'Дон Ширлі',
                         'category' => 'actor'
                     ],
                     19 => [
-                        'title' => 'dolores',
+                        'title' => 'Долорес',
                         'category' => 'actor'
                     ]
                 ],
@@ -156,19 +152,19 @@ class CreateMoviePerson extends Migration
             6 => [
                 'actorIds' => [
                     20 => [
-                        'title' => 'noy',
+                        'title' => 'Ной Келхун',
                         'category' => 'actor'
                     ],
                     21 => [
-                        'title' => 'allie',
+                        'title' => 'Еллі Гамільтон',
                         'category' => 'actor'
                     ],
                     22 => [
-                        'title' => 'old noy',
+                        'title' => 'старий Ной',
                         'category' => 'actor'
                     ],
                     23 => [
-                        'title' => 'old allie',
+                        'title' => 'стара Еллі',
                         'category' => 'actor'
                     ]
                 ],
@@ -182,16 +178,16 @@ class CreateMoviePerson extends Migration
             7 => [
                 'actorIds' => [
                     24 => [
-                        'title' => 'Luiza',
+                        'title' => 'Луїза Кларк',
                         'category' => 'actor'
                     ], 25 => [
-                        'title' => 'William',
+                        'title' => 'Вільям Трейнор',
                         'category' => 'actor'
                     ], 26 => [
-                        'title' => 'Patric',
+                        'title' => 'Патрік',
                         'category' => 'actor'
                     ], 27 => [
-                        'title' => 'Katrina',
+                        'title' => 'Катріна Кларк',
                         'category' => 'actor'
                     ]
                 ],
@@ -205,16 +201,16 @@ class CreateMoviePerson extends Migration
             8 => [
                 'actorIds' => [
                     28 => [
-                        'title' => 'Anna',
+                        'title' => 'Анна',
                         'category' => 'actor'
                     ], 29 => [
-                        'title' => 'Ellise',
+                        'title' => 'Еліс',
                         'category' => 'actor'
                     ], 30 => [
-                        'title' => 'Den',
+                        'title' => 'Ден',
                         'category' => 'actor'
                     ], 31 => [
-                        'title' => 'Larry',
+                        'title' => 'Ларрі',
                         'category' => 'actor'
                     ]
                 ],
@@ -228,16 +224,16 @@ class CreateMoviePerson extends Migration
             9 => [
                 'actorIds' => [
                     32 => [
-                        'title' => 'Simone',
+                        'title' => 'Саймон Спір',
                         'category' => 'actor'
                     ], 33 => [
-                        'title' => 'Lea',
+                        'title' => 'Леа Берк',
                         'category' => 'actor'
                     ], 34 => [
-                        'title' => 'Abbie',
+                        'title' => 'Еббі Сусо',
                         'category' => 'actor'
                     ], 35 => [
-                        'title' => 'Martin',
+                        'title' => 'Мартін Еддісон',
                         'category' => 'actor'
                     ]
                 ],
@@ -251,18 +247,18 @@ class CreateMoviePerson extends Migration
             10 => [
                 'actorIds' => [
                     36 => [
-                        'title' => 'Keroll',
+                        'title' => 'Керол Ейрд',
                         'category' => 'actor'
                     ],
                     37 => [
-                        'title' => 'Teresa',
+                        'title' => 'Тереза Беліве',
                         'category' => 'actor'
                     ],
                     38 => [
-                        'title' => 'Kirj',
+                        'title' => 'Гердж Ейрд',
                         'category' => 'actor'
                     ], 39 => [
-                        'title' => 'Abbie',
+                        'title' => 'Еббі',
                         'category' => 'actor'
                     ]
                 ],
@@ -276,16 +272,16 @@ class CreateMoviePerson extends Migration
             11 => [
                 'actorIds' => [
                     40 => [
-                        'title' => 'Stanley',
+                        'title' => 'Стенлі Кроуфорд',
                         'category' => 'actor'
                     ], 41 => [
-                        'title' => 'Sofie',
+                        'title' => 'Софія Бейкер',
                         'category' => 'actor'
                     ], 42 => [
-                        'title' => 'Bryas',
+                        'title' => 'Брайс',
                         'category' => 'actor'
                     ], 43 => [
-                        'title' => 'ms',
+                        'title' => 'місіс Бейкер',
                         'category' => 'actor'
                     ]
                 ],
@@ -299,16 +295,16 @@ class CreateMoviePerson extends Migration
             12 => [
                 'actorIds' => [
                     44 => [
-                        'title' => 'Sloan',
+                        'title' => 'Слоан Бенсон',
                         'category' => 'actor'
                     ], 45 => [
-                        'title' => 'Jekson',
+                        'title' => 'Джексон',
                         'category' => 'actor'
                     ], 46 => [
-                        'title' => 'unt',
+                        'title' => 'Сьюзан',
                         'category' => 'actor'
                     ], 47 => [
-                        'title' => 'Nail',
+                        'title' => 'Ніл',
                         'category' => 'actor'
                     ]
                 ],
@@ -322,16 +318,16 @@ class CreateMoviePerson extends Migration
             13 => [
                 'actorIds' => [
                     48 => [
-                        'title' => 'Nails',
+                        'title' => 'Найлз',
                         'category' => 'actor'
                     ], 49 => [
-                        'title' => 'Sarah',
+                        'title' => 'Сара',
                         'category' => 'actor'
                     ], 50 => [
-                        'title' => 'Tala',
+                        'title' => 'Тала',
                         'category' => 'actor'
                     ], 51 => [
-                        'title' => 'Eyb',
+                        'title' => 'Ейб',
                         'category' => 'actor'
                     ]
                 ],
@@ -345,13 +341,13 @@ class CreateMoviePerson extends Migration
             14 => [
                 'actorIds' => [
                     52 => [
-                        'title' => 'Frida',
+                        'title' => 'Фріда Кало',
                         'category' => 'actor'
                     ], 53 => [
-                        'title' => 'Diego',
+                        'title' => 'Дієго Рівера',
                         'category' => 'actor'
                     ], 54 => [
-                        'title' => 'Nelson',
+                        'title' => 'Нельсон Рокфеллер',
                         'category' => 'actor'
                     ]
                 ],
@@ -365,12 +361,18 @@ class CreateMoviePerson extends Migration
             15 => [
                 'actorIds' => [
                     1 => [
-                        'title' => 'Elizabeth',
+                        'title' => 'Елізабет Беннет',
+                        'category' => 'actor'
+                    ], 71 => [
+                        'title' => 'Фіцвільям Дарсі',
+                        'category' => 'actor'
+                    ], 72 => [
+                        'title' => 'пан Беннет',
                         'category' => 'actor'
                     ]
                 ],
                 'directorIds' => [
-                    70 => [
+                    55 => [
                         'title' => '',
                         'category' => 'director'
                     ]

@@ -36,13 +36,15 @@ Route::get('/actors/{id}', function ($id) {
 });
 
 Route::get('/movies', function (Request $request) {
-    $input = $request->only(['filter', 'limit']);
+    $input = $request->only(['filter', 'per_page', 'page']);
 
     if (isset($input['limit'])) {
         return Movie::take($input['limit'])->get();
     }
 
-    return Movie::all();
+    $per_page = $input['per_page'] ?? 10;
+
+    return Movie::paginate($per_page);
 });
 
 Route::get('/genres', function (Request $request) {
@@ -75,10 +77,10 @@ Route::get('/movies/{id}', function ($id) {
 
     $actors = $movie_people->where('category', '=', 'actor') ?? [];
 
-    $directors = $movie_people->where('category', '=', 'director') ?? [];
+    $directors = $movie_people->where('category', '=', 'director')->toArray() ?? [];
 
     $movie->actors = $actors;
-    $movie->directors = $directors;
+    $movie->directors = array_values($directors);
 
     return $movie;
 });

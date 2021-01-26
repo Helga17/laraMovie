@@ -241,7 +241,7 @@ class CreatePeopleTable extends Migration
                 'first_name' => 'Кайл',
                 'last_name' => 'Чандлер',
                 'birthday' => '17 вересня 1965',
-                'image' => 'images/people/chendler.png'
+                'image' => 'images/people/chenlder.png'
             ],
             39 => [
                 'first_name' => 'Сара',
@@ -268,7 +268,7 @@ class CreatePeopleTable extends Migration
                 'image' => 'images/people/linklater.png'
             ],
             43 => [
-                'first_name' => 'Марсія Ґей',
+                'first_name' => 'Марсія',
                 'last_name' => 'Гарден',
                 'birthday' => '14 серпня 1959',
                 'image' => 'images/people/garden.png'
@@ -435,6 +435,18 @@ class CreatePeopleTable extends Migration
                 'last_name' => 'Теймор',
                 'birthday' => '15 грудня 1952 ',
                 'image' => 'images/people/taymor.png'
+            ],
+            71 => [
+                'first_name' => 'Меттью',
+                'last_name' => 'Макфедьєн',
+                'birthday' => '17 жовтня 1974',
+                'image' => 'images/people/macfadyen.png'
+            ],
+            72 => [
+                'first_name' => 'Дональд',
+                'last_name' => 'Сазерленд',
+                'birthday' => '17 липня 1935 ',
+                'image' => 'images/people/sutherland.png'
             ]
 
         ];

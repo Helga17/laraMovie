@@ -236,6 +236,22 @@ class CreateMomentsTable extends Migration
                 'movie_id' => 14,
                 'image' => 'images/moments/frida4.png'
             ],
+            [
+                'movie_id' => 15,
+                'image' => 'images/moments/pridePrejudice1.png'
+            ],
+            [
+                'movie_id' => 15,
+                'image' => 'images/moments/pridePrejudice2.png'
+            ],
+            [
+                'movie_id' => 15,
+                'image' => 'images/moments/pridePrejudice3.png'
+            ],
+            [
+                'movie_id' => 15,
+                'image' => 'images/moments/pridePrejudice4.png'
+            ],
         ];
 
         Schema::create('moments', function (Blueprint $table) {
